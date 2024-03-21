@@ -1,32 +1,100 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      justify-items: center;
+      align-items: center;
+    }
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+    h1 {
+      grid-column: 1 / -1;
+      font-size: 3rem;
+      color: royalblue;
+      margin: 1rem 0;
+      position: relative;
+      animation: bounce 2s infinite;
+    }
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .container img {
+      width: 100%;
+      max-width: 200px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    button {
+      grid-column: 1 / -1;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 1rem 0;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #birthdayMessage {
+      display: none;
+      grid-column: 1 / -1;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
+<div class="container">
+  <h1>Happy Birthday!</h1>
+  <img src="img/morepics.JPG" alt="Photo with Dad">
+  <img src="img/bdaypicture.png" alt="Snowy Landscape">
+  <img src="img/italy.jpg" alt="Birthday Breakfast">
+  <button id="revealButton">Reveal your birthday message!</button>
+  <p id="birthdayMessage">Happy Birthday Daddy! Missing you so much today!!</p>
+</div>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
-
+<script>
+  document.getElementById('revealButton').addEventListener('click', function() {
+    document.getElementById('birthdayMessage').style.display = 'block';
+  });
+</script>
 </body>
 
 </html>
