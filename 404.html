@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: royalblue;
+      margin-bottom: 30px;
+      position: relative;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Happy Birthday!</h1>
+  <button id="revealButton">Click here to reveal your birthday message!</button>
+  <p id="birthdayMessage" class="hidden">Happy Birthday Daddy!! Missing you a lot today!</p>
+  <img src="./img/bdaypicture.png" alt="Cute Birthday Image" width="300">
+
+
+</div>
+
+<script>
+  document.getElementById('revealButton').addEventListener('click', function() {
+    document.getElementById('birthdayMessage').classList.remove('hidden');
+  });
+</script>
+</body>
+</html>
+
