@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    h1 {
+      grid-column: 1 / -1;
+      font-size: 3rem;
+      color: royalblue;
+      margin: 1rem 0;
+      position: relative;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .container img {
+      width: 100%;
+      max-width: 200px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    button {
+      grid-column: 1 / -1;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 1rem 0;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #birthdayMessage {
+      display: none;
+      grid-column: 1 / -1;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Happy Birthday!</h1>
+  <img src="img/morepics.JPG" alt="Photo with Dad">
+  <img src="img/bdaypicture.png" alt="Snowy Landscape">
+  <img src="img/italy.jpg" alt="Birthday Breakfast">
+  <button id="revealButton">Reveal your birthday message!</button>
+  <p id="birthdayMessage">Happy Birthday Daddy! Missing you so much today!!</p>
+</div>
+
+<script>
+  document.getElementById('revealButton').addEventListener('click', function() {
+    document.getElementById('birthdayMessage').style.display = 'block';
+  });
+</script>
+</body>
+</html>
